@@ -17,4 +17,11 @@ public abstract class Rental implements Visitable {
     public Movie getMovie() {
         return movie;
     }
+
+    public abstract int getDaysForRegularRental();
+
+    public abstract double getPriceForRegularRental();
+
+    public abstract double getPricePerDayForLongRental();
+
 }
