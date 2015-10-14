@@ -1,26 +1,20 @@
 package movierental;
 
-/**
- * The rental class represents a customer renting a movie.
- */
-public class Rental {
+public abstract class Rental implements Visitable {
 
-    private Movie _movie;
-    private int _daysRented;
+    private Movie movie;
+    private int numberOfDaysRented;
 
-    public Rental(Movie movie, int daysRented) {
-        _movie = movie;
-        _daysRented = daysRented;
+    public Rental(Movie movie, int numberOfDaysRented) {
+        this.movie = movie;
+        this.numberOfDaysRented = numberOfDaysRented;
     }
 
     public int getDaysRented() {
-        return _daysRented;
+        return numberOfDaysRented;
     }
 
     public Movie getMovie() {
-        return _movie;
+        return movie;
     }
-
-
-
 }
