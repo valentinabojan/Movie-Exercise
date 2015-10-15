@@ -4,7 +4,7 @@ public class ChildrenMovieRentalStrategy extends MovieRentalStrategy {
 
     @Override
     public int calculateFidelityPoints(Rental rental) {
-        return 0;
+        return 1;
     }
 
     @Override

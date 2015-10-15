@@ -4,7 +4,10 @@ public class NewReleaseMovieRentalStrategy extends MovieRentalStrategy {
 
     @Override
     public int calculateFidelityPoints(Rental rental) {
-        return 0;
+        if (rental.getDaysRented() > 1)
+            return 2;
+        else
+            return 1;
     }
 
     @Override

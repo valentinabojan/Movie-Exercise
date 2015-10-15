@@ -22,9 +22,8 @@ public class CustomerRentalReportBuilder {
             MovieRentalStrategy strategy = MovieRentalStrategyFactory.createStrategy(movieType);
 
             thisAmount += strategy.calculateRentalPrice(rental);
+            frequentRenterPoints += strategy.calculateFidelityPoints(rental);
 
-            // add frequent renter points
-            frequentRenterPoints++;
             // add bonus for a two day new release rental
             if ((rental.getMovie().getPriceCode() == MovieType.NEW_RELEASE) && rental.getDaysRented() > 1)
                 frequentRenterPoints++;
