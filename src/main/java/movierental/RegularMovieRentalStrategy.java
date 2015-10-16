@@ -2,17 +2,24 @@ package movierental;
 
 public class RegularMovieRentalStrategy extends MovieRentalStrategy {
 
+    private static final int FIDELITY_POINTS_FOR_NORMAL_RENTAL = 1;
+    private static final double PRICE_FOR_NORMAL_RENTAL = 2;
+    private static final int NUMBER_OF_DAYS_FOR_NORMAL_RENTAL = 2;
+    private static final double PRICE_PER_DAY_FOR_EXTENDED_RENTAL = 1.5;
+
     @Override
     public int calculateFidelityPoints(Rental rental) {
-        return 1;
+        return FIDELITY_POINTS_FOR_NORMAL_RENTAL;
     }
 
     @Override
     public double calculateRentalPrice(Rental rental) {
-        double thisAmount = 2;
-        if (rental.getDaysRented() > 2)
-            thisAmount += (rental.getDaysRented() - 2) * 1.5;
+        double rentalPrice = PRICE_FOR_NORMAL_RENTAL;
 
-        return thisAmount;
+        int extendedRentalDays = rental.getDaysRented() - NUMBER_OF_DAYS_FOR_NORMAL_RENTAL;
+        if (extendedRentalDays > 0)
+            rentalPrice += extendedRentalDays * PRICE_PER_DAY_FOR_EXTENDED_RENTAL;
+
+        return rentalPrice;
     }
 }
