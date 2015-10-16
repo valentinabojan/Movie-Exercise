@@ -1,4 +1,11 @@
-package movierental;
+package rental_reports;
+
+import beans.Customer;
+import beans.Movie;
+import beans.MovieType;
+import beans.Rental;
+import rental_strategies.RentalStrategy;
+import rental_strategies.RentalStrategyFactory;
 
 public class RentalReportBuilder {
 
@@ -50,20 +57,20 @@ public class RentalReportBuilder {
         return customer.getRentals().stream().map(this::calculateRentalPrice).reduce(0.0, Double::sum);
     }
 
-    private MovieRentalStrategy createRentalStrategy(Rental rental) {
+    private RentalStrategy createRentalStrategy(Rental rental) {
         MovieType movieType = rental.getMovie().getType();
 
         return RentalStrategyFactory.createStrategy(movieType);
     }
 
     private double calculateRentalPrice(Rental rental) {
-        MovieRentalStrategy strategy = createRentalStrategy(rental);
+        RentalStrategy strategy = createRentalStrategy(rental);
 
         return strategy.calculateRentalPrice(rental);
     }
 
     private int calculateFidelityPoints(Rental rental) {
-        MovieRentalStrategy strategy = createRentalStrategy(rental);
+        RentalStrategy strategy = createRentalStrategy(rental);
 
         return strategy.calculateFidelityPoints(rental);
     }

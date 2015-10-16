@@ -1,6 +1,8 @@
-package movierental;
+package rental_strategies;
 
-public class NewReleaseMovieRentalStrategy extends MovieRentalStrategy {
+import beans.Rental;
+
+public class NewReleaseMovieRentalStrategy extends RentalStrategy {
     private static final int FIDELITY_POINTS_FOR_NORMAL_RENTAL = 1;
     private static final int FIDELITY_POINTS_FOR_EXTENDED_RENTAL = 2;
     private static final double PRICE_PER_DAY_FOR_RENTAL = 3;

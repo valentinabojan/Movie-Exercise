@@ -1,4 +1,4 @@
-package movierental;
+package beans;
 
 public enum MovieType {
 

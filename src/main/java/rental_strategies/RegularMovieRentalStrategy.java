@@ -1,10 +1,12 @@
-package movierental;
+package rental_strategies;
 
-public class ChildrenMovieRentalStrategy extends MovieRentalStrategy {
+import beans.Rental;
+
+public class RegularMovieRentalStrategy extends RentalStrategy {
 
     private static final int FIDELITY_POINTS_FOR_NORMAL_RENTAL = 1;
-    private static final double PRICE_FOR_NORMAL_RENTAL = 1.5;
-    private static final int NUMBER_OF_DAYS_FOR_NORMAL_RENTAL = 3;
+    private static final double PRICE_FOR_NORMAL_RENTAL = 2;
+    private static final int NUMBER_OF_DAYS_FOR_NORMAL_RENTAL = 2;
     private static final double PRICE_PER_DAY_FOR_EXTENDED_RENTAL = 1.5;
 
     @Override
@@ -22,5 +24,4 @@ public class ChildrenMovieRentalStrategy extends MovieRentalStrategy {
 
         return rentalPrice;
     }
-
 }

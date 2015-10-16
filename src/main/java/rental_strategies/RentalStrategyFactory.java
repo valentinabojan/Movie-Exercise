@@ -1,8 +1,10 @@
-package movierental;
+package rental_strategies;
+
+import beans.MovieType;
 
 public class RentalStrategyFactory {
 
-    public static MovieRentalStrategy createStrategy(MovieType movieType) {
+    public static RentalStrategy createStrategy(MovieType movieType) {
         switch (movieType) {
         case NEW_RELEASE:
             return new NewReleaseMovieRentalStrategy();

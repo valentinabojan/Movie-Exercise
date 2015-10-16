@@ -1,6 +1,8 @@
-package movierental;
+package rental_strategies;
 
-public abstract class MovieRentalStrategy {
+import beans.Rental;
+
+public abstract class RentalStrategy {
 
     public abstract int calculateFidelityPoints(Rental rental);
 

@@ -3,6 +3,10 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import static org.assertj.core.api.Assertions.*;
 
+import beans.Customer;
+import beans.Movie;
+import beans.MovieType;
+import beans.Rental;
 import org.junit.Test;
 
 public class CustomerTest {

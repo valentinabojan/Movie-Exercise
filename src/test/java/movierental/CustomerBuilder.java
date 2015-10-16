@@ -1,5 +1,8 @@
 package movierental;
 
+import beans.Customer;
+import beans.Rental;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,13 +11,11 @@ public class CustomerBuilder {
 
     public static final String NAME = "Gregroire";
     private String name = NAME;
-    private List<Rental> rentals = new ArrayList<Rental>();
+    private List<Rental> rentals = new ArrayList<>();
 
     public Customer build() {
         Customer result = new Customer(name);
-        for (Rental rental : rentals) {
-            result.addRental(rental);
-        }
+        rentals.forEach(result::addRental);
         return result;
     }
 

@@ -1,5 +1,10 @@
 package movierental;
 
+import beans.Customer;
+import beans.Movie;
+import beans.MovieType;
+import beans.Rental;
+import rental_reports.RentalReportBuilder;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
