@@ -1,4 +1,4 @@
-package movierental;
+package movierental.movie_rental_entities;
 
 public class Movie {
 

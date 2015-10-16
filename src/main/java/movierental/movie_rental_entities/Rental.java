@@ -1,6 +1,8 @@
-package movierental;
+package movierental.movie_rental_entities;
 
-public abstract class Rental implements Visitable {
+import movierental.rental_visitables.RentalVisitable;
+
+public abstract class Rental implements RentalVisitable {
 
     private Movie movie;
     private int numberOfDaysRented;
@@ -18,10 +20,10 @@ public abstract class Rental implements Visitable {
         return movie;
     }
 
-    public abstract int getDaysForRegularRental();
+    public abstract int getDaysForNormalRental();
 
-    public abstract double getPriceForRegularRental();
+    public abstract double getPriceForNormalRental();
 
-    public abstract double getPricePerDayForLongRental();
+    public abstract double getPricePerDayForExtendedRental();
 
 }

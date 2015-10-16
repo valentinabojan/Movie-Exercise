@@ -1,5 +1,8 @@
 package movierental;
 
+import movierental.movie_rental_entities.Customer;
+import movierental.movie_rental_entities.Rental;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,13 +11,11 @@ public class CustomerBuilder {
 
     public static final String NAME = "Gregroire";
     private String name = NAME;
-    private List<Rental> rentals = new ArrayList<Rental>();
+    private List<Rental> rentals = new ArrayList<>();
 
-    public CustomerRentalReport build() {
-        CustomerRentalReport result = new CustomerRentalReport(name);
-        for (Rental rental : rentals) {
-            result.addRental(rental);
-        }
+    public Customer build() {
+        Customer result = new Customer(name);
+        rentals.forEach(result::addRental);
         return result;
     }
 

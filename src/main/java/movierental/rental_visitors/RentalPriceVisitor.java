@@ -1,4 +1,9 @@
-package movierental;
+package movierental.rental_visitors;
+
+import movierental.rental_visitables.ChildrenMovieRental;
+import movierental.rental_visitables.NewReleaseMovieRental;
+import movierental.rental_visitables.RegularMovieRental;
+import movierental.movie_rental_entities.Rental;
 
 public class RentalPriceVisitor implements RentalVisitor {
 
@@ -24,11 +29,11 @@ public class RentalPriceVisitor implements RentalVisitor {
     }
 
     private double calculateRentalPrice(Rental rental) {
-        rentalPrice = rental.getPriceForRegularRental();
+        rentalPrice = rental.getPriceForNormalRental();
 
-        int longRentalDays = rental.getDaysRented() - rental.getDaysForRegularRental();
-        if (longRentalDays > 0)
-            rentalPrice += longRentalDays * rental.getPricePerDayForLongRental();
+        int extendedRentalDays = rental.getDaysRented() - rental.getDaysForNormalRental();
+        if (extendedRentalDays > 0)
+            rentalPrice += extendedRentalDays * rental.getPricePerDayForExtendedRental();
 
         return rentalPrice;
     }
