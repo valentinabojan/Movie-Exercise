@@ -12,7 +12,7 @@ import static junit.framework.Assert.assertEquals;
 public class RentalReportBuilderTest {
 
     @Test
-    public void statementForRegularMovie_ForNormalRental() {
+    public void statementForRegularMovieAndForNormalRental() {
         Movie movie = new Movie("Gone with the Wind", MovieType.REGULAR);
         Rental rental = new Rental(movie, 2); // 2 day rental
         Customer customer =
@@ -32,7 +32,7 @@ public class RentalReportBuilderTest {
     }
 
     @Test
-    public void statementForRegularMovie_ForExtendedRental() {
+    public void statementForRegularMovieAndForExtendedRental() {
         Movie movie = new Movie("Gone with the Wind", MovieType.REGULAR);
         Rental rental = new Rental(movie, 3); // 3 day rental
         Customer customer =
@@ -52,7 +52,7 @@ public class RentalReportBuilderTest {
     }
 
     @Test
-    public void statementForNewReleaseMovie_ForNormalRental() {
+    public void statementForNewReleaseMovieAndForNormalRental() {
         Movie movie = new Movie("Star Wars", MovieType.NEW_RELEASE);
         Rental rental = new Rental(movie, 1); // 1 day rental
         Customer customer =
@@ -72,7 +72,7 @@ public class RentalReportBuilderTest {
     }
 
     @Test
-    public void statementForNewReleaseMovie_ForExtendedRental() {
+    public void statementForNewReleaseMovieAndForExtendedRental() {
         Movie movie = new Movie("Star Wars", MovieType.NEW_RELEASE);
         Rental rental = new Rental(movie, 3); // 3 day rental
         Customer customer =
@@ -92,7 +92,7 @@ public class RentalReportBuilderTest {
     }
 
     @Test
-    public void statementForChildrenMovie_ForNormalRental() {
+    public void statementForChildrenMovieAndForNormalRental() {
         Movie movie = new Movie("Madagascar", MovieType.CHILDREN);
         Rental rental = new Rental(movie, 3); // 3 day rental
         Customer customer
@@ -112,7 +112,7 @@ public class RentalReportBuilderTest {
     }
 
     @Test
-    public void statementForChildrenMovie_ForExtendedRental() {
+    public void statementForChildrenMovieAndForExtendedRental() {
         Movie movie = new Movie("Madagascar", MovieType.CHILDREN);
         Rental rental = new Rental(movie, 4); // 4 day rental
         Customer customer
